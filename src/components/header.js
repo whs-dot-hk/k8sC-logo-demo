@@ -15,10 +15,10 @@ class Header extends React.Component {
 
   state = {
     logoActivated: true,
-    logoSmall: false,
   }
 
   componentDidMount() {
+    this.handleResize();
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -27,7 +27,7 @@ class Header extends React.Component {
   }
 
   handleResize() {
-    this.setState({logoSmall: window.innerWidth <= 960});
+    this.setState({logoSmall: window.innerWidth < 960});
   }
 
   render() {
